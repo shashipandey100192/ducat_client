@@ -1,13 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import Navbar from './modules/shares/navbar';
 import reportWebVitals from './reportWebVitals';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle";
+import { BrowserRouter, Route,Routes } from 'react-router-dom';
+import Landing from './modules/dashboard/Landing';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+  <BrowserRouter>
+  <Navbar></Navbar>
+    <Routes>
+      <Route path='' element={<Landing/>}/>
+    </Routes>
+  
+  </BrowserRouter>
+
   </React.StrictMode>
 );
 
